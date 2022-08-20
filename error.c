@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* error - print error
+* print_error - print error
 * @line:string containing the line
 *@line_number: number of the line
 * return void

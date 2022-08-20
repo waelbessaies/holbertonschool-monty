@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #define VALID 1
- char *input;
-/*
+
+/**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
  * @prev: points to the previous element of the stack (or queue)
@@ -22,9 +22,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+int n;
+struct stack_s *prev;
+struct stack_s *next;
 } stack_t;
 
 
@@ -38,12 +38,13 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+char *opcode;
+void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void interpret_line(char *line, unsigned int line_number, stack_t **stack);
 int digits(char *input);
+char *input;
 int valid(char *function_name);
 void print_error(char *line, unsigned int line_number);
 void getopfunc(char *function_name, unsigned int line_number, stack_t **stack);
