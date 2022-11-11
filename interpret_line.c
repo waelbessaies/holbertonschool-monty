@@ -57,4 +57,5 @@ int check_number_string(char *string)
 			return 1;
 		string++;
 	}
+	return 0;
 }
