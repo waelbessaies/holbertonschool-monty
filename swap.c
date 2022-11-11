@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * swap - swap 2 first nodes
+ * @stack: stack
+ * @line_number: line number
+ */
 void swap(stack_m **stack, unsigned int line_number)
 {
 	stack_m *p = (*stack);
