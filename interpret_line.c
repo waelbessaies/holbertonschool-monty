@@ -23,7 +23,7 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		int flag = 0;
 		while (p != NULL && *p != '\0')
 		{
-			if (isnumber(*p) == 0)
+			if (isdigit(*p) == 0)
 			{
 				flag = 1;
 			}
