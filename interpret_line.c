@@ -20,17 +20,7 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		input = strtok(NULL, " \t\n");
 		inoperative = valid(function_name);
 		p = input;
-		while (p != NULL && *p != '\0')
-		{
-			if (*p == '-')
-			{
-				if (isdigit(*(p + 1)) == 0 && p--)
-					flag = 1;
-			}
-			else if (*p != '-' && isdigit(*p) == 0)
-				flag = 1;
-			p++;
-		}
+		flag = check_number_string(p);
 		if (strcmp(function_name, "push") == 0 && (!input || flag == 1))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
@@ -51,5 +41,20 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		}
 		else
 			getopfunc(function_name, line_number, stack);
+	}
+}
+
+int check_number_string(char *string)
+{
+	while (string != NULL && *string != '\0')
+	{
+		if (*string == '-')
+		{
+			if (isdigit(*(string + 1)) == 0 && string--)
+				return 1;
+		}
+		else if (*string != '-' && isdigit(*string) == 0)
+			return 1;
+		string++;
 	}
 }
