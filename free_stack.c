@@ -7,6 +7,7 @@
 void free_stack(stack_m **stack)
 {
 	stack_m *ptr, *tmp;
+
 	ptr = *stack;
 	while (ptr)
 	{
