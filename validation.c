@@ -7,13 +7,13 @@
  */
 int valid(char *function_name)
 {
-	char name[][10] = { "pall", "pint", "pop", "nop", ""};
-	unsigned int i;
+    char name[][10] = {"push", "pall", "pint", "pop", "nop", ""};
+    unsigned int i;
 
-	for (i = 0; name[i][0] != '\0'; i++)
-	{
-		if (strcmp(name[i], function_name) == 0)
-			return (1);
-	}
-	return (0);
+    for (i = 0; name[i][0] != '\0'; i++)
+    {
+        if (strcmp(name[i], function_name) == 0)
+            return (1);
+    }
+    return (0);
 }

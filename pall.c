@@ -6,17 +6,17 @@
  * Return: void
  */
 
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_m **stack, unsigned int line_number)
 {
-	stack_t *ptr;
+    stack_m *ptr;
 
-	(void)line_number;
-	if (stack == NULL || *stack == NULL)
-		return;
-	ptr = *stack;
-	while (ptr)
-	{
-		printf("%d\n", ptr->n);
-		ptr = ptr->next;
-	}
+    (void)line_number;
+    if (stack == NULL || *stack == NULL)
+        return;
+    ptr = *stack;
+    while (ptr)
+    {
+        printf("%d\n", ptr->n);
+        ptr = ptr->next;
+    }
 }
