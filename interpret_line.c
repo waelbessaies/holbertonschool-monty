@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <_ctype.h>
 
 /**
  * interpret_line - intrepets the line
