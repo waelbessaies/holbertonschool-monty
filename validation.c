@@ -7,7 +7,7 @@
  */
 int valid(char *function_name)
 {
-	char name[][10] = {"push", "pall", "pint", "pop", "nop", ""};
+	char name[][10] = {"push", "pall", "pint", "pop", "nop", "swap", ""};
 	unsigned int i;
 
 	for (i = 0; name[i][0] != '\0'; i++)

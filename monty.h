@@ -55,5 +55,6 @@ void pall(stack_m **stack, unsigned int line_number);
 void pint(stack_m **stack, unsigned int line_number);
 void pop(stack_m **stack, unsigned int line_number);
 void nop(stack_m **stack, unsigned int line_number);
+void swap(stack_m **stack, unsigned int line_number);
 int check_number_string(char *string);
 #endif
