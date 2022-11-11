@@ -21,7 +21,7 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		if (strcmp(function_name, "push") == 0 && !input)
 		{
 
-			fprintf(stderr, "L%d: usage: push integer ", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			free_stack(stack);
 			stack = NULL;
 			free(line);
