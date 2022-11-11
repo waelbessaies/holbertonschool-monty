@@ -11,7 +11,7 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 {
 	char *function_name;
 	int inoperative;
-	char *p = input;
+	char *p;
 	int flag = 0;
 
 	function_name = strtok(line, " \t\n");
@@ -19,6 +19,7 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 	{
 		input = strtok(NULL, " \t\n");
 		inoperative = valid(function_name);
+		p = input;
 		while (p != NULL && *p != '\0')
 		{
 			if (*p == '-')
