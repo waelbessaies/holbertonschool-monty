@@ -43,7 +43,11 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 			getopfunc(function_name, line_number, stack);
 	}
 }
-
+/**
+ * check_number_string - checks if string is a number
+ * @string: string
+ * Return: 1 or 0
+ */
 int check_number_string(char *string)
 {
 	while (string != NULL && *string != '\0')
@@ -51,11 +55,11 @@ int check_number_string(char *string)
 		if (*string == '-')
 		{
 			if (isdigit(*(string + 1)) == 0 && string--)
-				return 1;
+				return (1);
 		}
 		else if (*string != '-' && isdigit(*string) == 0)
-			return 1;
+			return (1);
 		string++;
 	}
-	return 0;
+	return (0);
 }
