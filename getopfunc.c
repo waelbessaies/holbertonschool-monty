@@ -15,6 +15,7 @@ void getopfunc(char *function_name, unsigned int line_number, stack_m **stack)
 							{"nop", nop},
 							{"push", push},
 							{"swap", swap},
+							{"add", add},
 							{NULL, NULL}};
 	unsigned int i;
 
