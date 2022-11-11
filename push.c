@@ -8,7 +8,8 @@
 
 void push(stack_m **stack, unsigned int line_number)
 {
-    printf("%d\n", atoi(input));
+    (void)line_number;
+
     stack_m *ptr = malloc(sizeof(stack_m));
 
     ptr->n = atoi(input);
