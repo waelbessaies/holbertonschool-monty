@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <_ctype.h>
+
 /**
  * interpret_line - intrepets the line
  *@line: string containnig the line
@@ -18,9 +20,18 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		input = strtok(NULL, " \t\n");
 
 		inoperative = valid(function_name);
-		if (strcmp(function_name, "push") == 0 && !input)
+		char *p = input;
+		int flag = 0;
+		while (p != NULL && *p != '\0')
 		{
-
+			if (isnumber(*p) == 0)
+			{
+				flag = 1;
+			}
+			p++;
+		}
+		if (strcmp(function_name, "push") == 0 && (!input || flag == 1))
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			free_stack(stack);
 			stack = NULL;
