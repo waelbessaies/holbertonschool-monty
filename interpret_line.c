@@ -18,11 +18,23 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		input = strtok(NULL, " \t\n");
 
 		inoperative = valid(function_name);
-		if (inoperative != VALID)
+		if (strcmp(function_name, "push") == 0 && !input)
+		{
+
+			fprintf(stderr, "L%d: usage: push integer ", line_number);
+			free_stack(stack);
+			stack = NULL;
+			free(line);
+			line = NULL;
+			exit(EXIT_FAILURE);
+		}
+		else if (inoperative != VALID)
 		{
 			print_error(line, line_number);
 			free_stack(stack);
+			stack = NULL;
 			free(line);
+			line = NULL;
 			exit(EXIT_FAILURE);
 		}
 		else
