@@ -22,11 +22,10 @@
  */
 typedef struct stack_s
 {
-int n;
-struct stack_s *prev;
-struct stack_s *next;
-} stack_t;
-
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
+} stack_m; // changed type from stack_t to stack_m
 
 /**
  * struct instruction_s - opcode and its function
@@ -38,21 +37,22 @@ struct stack_s *next;
  */
 typedef struct instruction_s
 {
-char *opcode;
-void (*f)(stack_t **stack, unsigned int line_number);
+    char *opcode;
+    void (*f)(stack_m **stack, unsigned int line_number);
 } instruction_t;
 
-void interpret_line(char *line, unsigned int line_number, stack_t **stack);
+void interpret_line(char *line, unsigned int line_number, stack_m **stack);
 int digits(char *input);
 char *input;
 int valid(char *function_name);
 void print_error(char *line, unsigned int line_number);
-void getopfunc(char *function_name, unsigned int line_number, stack_t **stack);
-void free_stack(stack_t **stack);
+void getopfunc(char *function_name, unsigned int line_number, stack_m **stack);
+void free_stack(stack_m **stack);
 
+void push(stack_m **stack, unsigned int line_number);
 
-void pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
+void pall(stack_m **stack, unsigned int line_number);
+void pint(stack_m **stack, unsigned int line_number);
+void pop(stack_m **stack, unsigned int line_number);
+void nop(stack_m **stack, unsigned int line_number);
 #endif
