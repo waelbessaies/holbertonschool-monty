@@ -11,13 +11,10 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 {
 	char *function_name;
 	int inoperative;
-
 	function_name = strtok(line, " \t\n");
-
 	if (function_name != NULL)
 	{
 		input = strtok(NULL, " \t\n");
-
 		inoperative = valid(function_name);
 		char *p = input;
 		int flag = 0;
@@ -25,16 +22,11 @@ void interpret_line(char *line, unsigned int line_number, stack_m **stack)
 		{
 			if (*p == '-')
 			{
-				if (isdigit(*(p + 1)) == 0)
-				{
+				if (isdigit(*(p + 1)) == 0 && p--)
 					flag = 1;
-					p--;
-				}
 			}
 			else if (*p != '-' && isdigit(*p) == 0)
-			{
 				flag = 1;
-			}
 			p++;
 		}
 		if (strcmp(function_name, "push") == 0 && (!input || flag == 1))
