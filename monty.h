@@ -22,9 +22,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_m; // changed type from stack_t to stack_m
 
 /**
@@ -37,8 +37,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_m **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_m **stack, unsigned int line_number);
 } instruction_t;
 
 void interpret_line(char *line, unsigned int line_number, stack_m **stack);

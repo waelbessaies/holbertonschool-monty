@@ -8,19 +8,19 @@
 
 void push(stack_m **stack, unsigned int line_number)
 {
-    (void)line_number;
+	(void)line_number;
 
-    if (input != NULL)
-    {
-        stack_m *ptr = malloc(sizeof(stack_m));
-        ptr->n = atoi(input);
-        ptr->next = (*stack);
-        ptr->prev = NULL;
+	if (input != NULL)
+	{
+		stack_m *ptr = malloc(sizeof(stack_m));
+		ptr->n = atoi(input);
+		ptr->next = (*stack);
+		ptr->prev = NULL;
 
-        if ((*stack) != NULL)
-        {
-            (*stack)->prev = ptr;
-        }
-        (*stack) = ptr;
-    }
+		if ((*stack) != NULL)
+		{
+			(*stack)->prev = ptr;
+		}
+		(*stack) = ptr;
+	}
 }

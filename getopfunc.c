@@ -9,19 +9,19 @@
 
 void getopfunc(char *function_name, unsigned int line_number, stack_m **stack)
 {
-    instruction_t inst[] = {{"pall", pall},
-                            {"pop", pop},
-                            {"pint", pint},
-                            {"nop", nop},
-                            {"push", push},
-                            {NULL, NULL}};
-    unsigned int i;
+	instruction_t inst[] = {{"pall", pall},
+							{"pop", pop},
+							{"pint", pint},
+							{"nop", nop},
+							{"push", push},
+							{NULL, NULL}};
+	unsigned int i;
 
-    for (i = 0; inst[i].opcode != NULL; i++)
-    {
-        if (strcmp(inst[i].opcode, function_name) == 0)
-        {
-            inst[i].f(stack, line_number);
-        }
-    }
+	for (i = 0; inst[i].opcode != NULL; i++)
+	{
+		if (strcmp(inst[i].opcode, function_name) == 0)
+		{
+			inst[i].f(stack, line_number);
+		}
+	}
 }
